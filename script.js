@@ -18,7 +18,7 @@ function apostarNumero() {
     return
   }
   //Referencia espaços das saídas de dados
-  let outDica = document.getElementById('outDicas')
+  let outDica = document.getElementById('outDica')
   let outErros = document.getElementById('outErros')
   let outChances = document.getElementById('outChances')
 
@@ -31,7 +31,7 @@ function apostarNumero() {
     outDica.textContent = 'Parabéns!! Número sorteado: ' + sorteado
   }else{
     //Se número existe no array erros
-    if (erros.indexOf(numero >= 0)) {
+    if (erros.indexOf(numero) >= 0) {
       alert('Você já apostou o número ' + numero + ' Tente outro...')
     }else{
       erros.push(numero) //Adiciona número ao array
@@ -49,7 +49,7 @@ function apostarNumero() {
       }else{
         //Usa operador ternário (condicional) para mensagem da dica
         let dica = numero < sorteado ? 'maior' : 'menor'
-        outDica.textContent = 'Dica: tente um número' + dica + ' que ' + numero
+        outDica.textContent = 'Dica: tente um número ' + dica + ' que ' + numero
       }
     }
   }
